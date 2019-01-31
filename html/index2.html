@@ -42,6 +42,8 @@
 
     <script>
         const log = console.log;
+
+        /* 
         var bt1 = document.getElementById("bt1");
         var bt2 = document.getElementById("bt2");
         var box1 = document.getElementById("box1");
@@ -57,9 +59,18 @@
 
         function bt2Reset() {
             box1.innerHTML = null;
-        };
+        }; */
 
+        // #1 jquery
 
+        $("#bt1").on("click", function () {
+            var html = $("#box1").html(); // html == innerHTML
+            $("#box1").html(html + "<div>▲</div>");
+        }); // event 붙이기, jquery 시작은 $, css와 똑같이 불러올 수 있음.
+
+        $("#bt2").click(function () {
+            $("#box1").html(null);
+        });
     </script>
 </body>
 
