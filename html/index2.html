@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaScript 02 DOM</title>
+
+    <script src="../js/jquery-3.3.1.min.js"></script>
+
+    <!-- External 방식(3) -->
+    <link href="../css/style.css" rel="stylesheet">
+    <style>
+        /* Internal 방식(2) */
+        div {
+            background-color: orange;
+        }
+
+        .box1 {
+            background-color: blue;
+        }
+
+        #box1 {
+            width: 200px;
+            height: 200px;
+            background-color: #f00;
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Inline 방식(1) -->
+    <div class="box" id="box1" style="background-color: pink;"></div> 
+
+    <script>
+        // #1
+        const log = console.log; // log 하면 태그가 나오게 된다.
+
+        // css로도 스타일을 적용할 수 있지만, javascript로도 접근할 수 있어야 한다.
+        /*    document.getElementById("box1").style.width = "200px";
+           document.getElementById("box1").style.height = "200px";
+           document.getElementById("box1").style.backgroundColor = "#f00"; */
+
+        // #2 - 색의 우선순위, 값바꿈
+        var box1 = document.getElementById("box1");
+        // document.getElementById("box1").style.width = "400px"
+        // box1.style.backgroundColor = "#000"; // 우선순위를 떠나서, 값을 바꿔준 것.
+
+
+        // #3 - 이벤트 추가하기
+        box1.addEventListener("click", function () {
+            // alert("Clicked");
+            // box1.style.backgroundColor = "#00f"; 
+            // this.style.backgroundColor = "#00f"; // 같은 말
+        }); // box1을 click하면, function을 실행해라.
+
+        // #4
+        box1.addEventListener("click", box1Click);
+
+        function box1Click() {
+            box1.style.backgroundColor = "#0ff";
+        };
+
+        
+    </script>
+</body>
+
+</html>
