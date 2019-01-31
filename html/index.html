@@ -27,24 +27,46 @@
         var d = fn(5);
         // console.log(d); // 방법1
         // console.log(fn(12)); // 방법2
-        
+
         // #3
         // alert("Hello World");
         // console.log(confirm("Hello World")); // 확인을 누르면 True, 취소를 누르면 False. 즉, return 값이 있는 함수라고 여기면 된다.
         // var e = fn( confirm("숫자를 입력하세요.") ); // confirm => 자바스크립트 내장함수, 사용자에게 결정을 내리게 해준다.
-        
+
         // #4
         // git 연결
 
         // #5
-        console.log("123"+"456", 123+456);
-        console.log(fn2(prompt("값을 입력하세요.")));
+        console.log("123" + "456", 123 + 456);
+        // console.log(fn2(prompt("값을 입력하세요.")));
+
         function fn2(x) {
             return Number(x) * Number(x); // Number: 형변환
         }
 
+        // 오후 수업
+        // #6
+        // 변수 이름은 의미 있는 것으로 쓰는 것이 좋다.
+
+        var str = "가나다";
+        var idx = 12;
+
+        var html;
+        html = "<div></div>";
+        html = "<ul><li></li></ul>";
+
+        // 상수. 변하지 않는 것.
+        const log = console.log;
+        log("로그가 먹히나?");
+        log(fn2); // 함수를 찍으면 함수가 찍힌다.
+
+        var fn3 = function(x){
+            return Number(x) * Number(x);
+        }
+        log(fn3(25));
         
- </script>
+        
+    </script>
 </body>
 
 </html>
