@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>JavaScript 02 DOM</title>
+    <!-- External 방식(3) -->
+    <!-- script가 css방식을 참조할 수 있기 때문에 script보다 위에 적어둔다. -->
+    <link href="../css/w3.css" rel="stylesheet">
 
     <script src="../js/jquery-3.3.1.min.js"></script>
-
-    <!-- External 방식(3) -->
-    <link href="../css/style.css" rel="stylesheet">
     <style>
         /* Internal 방식(2) */
         div {
@@ -23,8 +23,7 @@
 
         #box1 {
             width: 200px;
-            height: 200px;
-            background-color: #f00;
+            background-color: #fff;
 
         }
     </style>
@@ -33,38 +32,34 @@
 
 <body>
     <!-- Inline 방식(1) -->
-    <div class="box" id="box1" style="background-color: pink;"></div> 
+    <button class="w3-button w3-indigo" id="bt1">확인</button>
+    <button class="w3-button w3-red" id="bt2">초기화</button>
+    <div class="box" id="box1">
+
+    </div>
+
+
 
     <script>
-        // #1
-        const log = console.log; // log 하면 태그가 나오게 된다.
-
-        // css로도 스타일을 적용할 수 있지만, javascript로도 접근할 수 있어야 한다.
-        /*    document.getElementById("box1").style.width = "200px";
-           document.getElementById("box1").style.height = "200px";
-           document.getElementById("box1").style.backgroundColor = "#f00"; */
-
-        // #2 - 색의 우선순위, 값바꿈
+        const log = console.log;
+        var bt1 = document.getElementById("bt1");
+        var bt2 = document.getElementById("bt2");
         var box1 = document.getElementById("box1");
-        // document.getElementById("box1").style.width = "400px"
-        // box1.style.backgroundColor = "#000"; // 우선순위를 떠나서, 값을 바꿔준 것.
 
+        bt1.addEventListener("click", bt1Click);
+        bt2.addEventListener("click", bt2Reset);
 
-        // #3 - 이벤트 추가하기
-        box1.addEventListener("click", function () {
-            // alert("Clicked");
-            // box1.style.backgroundColor = "#00f"; 
-            // this.style.backgroundColor = "#00f"; // 같은 말
-        }); // box1을 click하면, function을 실행해라.
-
-        // #4
-        box1.addEventListener("click", box1Click);
-
-        function box1Click() {
-            box1.style.backgroundColor = "#0ff";
+        function bt1Click() {
+            var html = box1.innerHTML; // innerHTML 나의 내부에 있는 html을 가져와. getter
+            box1.innerHTML = html + '<div>★</div>'; // setter
+            log(html);
         };
 
-        
+        function bt2Reset() {
+            box1.innerHTML = null;
+        };
+
+
     </script>
 </body>
 
