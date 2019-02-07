@@ -68,3 +68,42 @@ log(gilsun.name);
 gilsun.eat("회");
 
 
+// #2
+// jQuery를 쓰는 가장 큰 이유는, 애니메이션 효과를 주기가 정말 편해서.
+/* 
+jQuery를 쓰는 이유
+1. 선택자가 편하다.
+2. animate, fadeIn, fadeOut, slideDown, slideUp, hide, show >> 자바스크립트로 구현하기 정말 불편, jQuery는 다 만들어져 있다.
+
+
+*/
+
+// 첫번째 애니메이션 - 같이 펼쳐짐
+
+/* $("#box1").click(function(){
+    $(this).animate({"width":"100%", "height":"100%"}, 2000, "linear", function(){}); // (자바스크립트 객체, int, 문자열, 함수)
+}); */
+
+
+// 두번째 애니메이션 - 가로로 펼쳐진 후, 세로로 펼쳐짐
+$("#box1").click(function(){
+    $(this).animate({"width":"100%"}, 2000, function(){ // JSON 문법
+        $(this).animate({"height":"100%"}, 1000);
+    }); // (자바스크립트 객체, int, 문자열, 함수)
+});
+
+/* var n = 0;
+var interval = window.setInterval(function(){
+    // log(n++);
+}, 500); */
+
+$("#music > li").each(function(){
+    // var per = 20;
+    // var per = Math.floor(Math.random()*100); // (0 ~ 1 의 값을 갖는 난수가 발생.)*100, floor>소숫점 버리기
+    var li = $(this);
+    var interval = setInterval(function(){
+        var per = Math.floor(Math.random()*70+30);
+        li.css({"height":(per)+"%"}); // css method라는게 있어서 편하다, 마음대로 바꿔줄 수 있음.
+    }, 123);
+  
+}); // each가 jQuery에서 중요함. 여러개 각각에게 함수를 실행.

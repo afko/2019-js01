@@ -21,6 +21,10 @@ li {
     box-sizing: border-box;
 }
 
+li {
+    list-style: none;
+}
+
 
 .clear {
     clear: both;
