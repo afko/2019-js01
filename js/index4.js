@@ -108,6 +108,9 @@ function sendForm() {
         return;
     }
 
+    f.email.value = email1.value + "@" + email2.value; // hidden 필드 이메일
+    f.tel.value = tel1.value + "-" + tel2.value + "-" + tel3.value;
+
     f.submit();
 };
 
@@ -135,27 +138,23 @@ $("#email3").on("change", function () {
 
 // 숫자만 입력
 
-$(".number").on("keyup", function(){
+$(".number").on("keyup", function () {
     log($(this).val());
 
     var exp = /^[0-9]*$/
     var val = $(this).val();
 
-    if(!exp.test(val)){
+    if (!exp.test(val)) {
         log("숫자를 입력하세요.")
-        $(this).val(val.replace(exp,''));
+        $(this).val("");
     };
 });
 
 
+// 숫자만 입력 정규식
 /* var regexp = /^[0-9]*$/
-
 v = $(this).val();
-
 if( !regexp.test(v) ) {
-
 	alert("숫자만 입력하세요");
-
 	$(this).val(v.replace(regexp,''));
-
 }; */
