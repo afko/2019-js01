@@ -66,9 +66,29 @@ DOM 관리 명령어
         $(".div").append(ul); : ul을 붙여넣기
 
 
-3. Animation 관련
+3. Animation 관련 method
+
+- animate({}, 2000)                                     :
+- fadeIn(1000), fadeOut(1000), fadeToggle(1000)         :
+- show(1000), hide(1000), toggle(1000)                  :
+- slideUp(1000), slideDown(1000), slideToggle(1000)     :
+
+4. Dimensions
+* https://www.w3schools.com/jquery/jquery_dimensions.asp 참고
+** 얘네들을 html에서 가져오는 것이 힘들다.
+- width() / innerWidth() / outerWidth(true)             : 내부 사이즈 / 패딩을 포함한 내부 사이즈 / 보더 및 마진을 포함한 사이즈
+- height() / innerHeight() / outerHeight(true)          : 
+
+- position();
+- offset();
+- scrollTop(); // 브라우저에서 보이지 않는 페이지의 윗부분 (스크롤 했을 시)
+
+width는 그때그때 다르다.
+box-sizing:content-box;     ==== content만
+box-sizing:border-box;      ==== border까지 포함
+
 - 실습 index6.js 참조
 
-4. Ajax
+5. Ajax
 - 실습 index7.js 참조
 */
