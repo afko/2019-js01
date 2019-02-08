@@ -1,4 +1,5 @@
 /* 
+
 --- jQuery를 바라보는 법 ---
 
 <div class="div">
@@ -89,6 +90,9 @@ box-sizing:border-box;      ==== border까지 포함
 
 - 실습 index6.js 참조
 
-5. Ajax
+---- 여태 퍼블리셔(UI 애니메이션) ---- 
+
+5. Ajax (프론트엔드 개발자(자바스크립트에 푹 빠져사는 사람들), 백엔드와 협업이 필요)
 - 실습 index7.js 참조
+
 */
