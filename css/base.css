@@ -35,3 +35,9 @@ li {
     content: "";
     clear: both;
 }
+
+.fl {float:left;}
+.fr {float:right;}
+.abs {position: absolute;}
+.rel {position: relative;}
+.fix {position: fixed;}
