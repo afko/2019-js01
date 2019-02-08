@@ -16,3 +16,6 @@
 #music > li:nth-child(3) {left:40%;}
 #music > li:nth-child(4) {left:60%;}
 #music > li:nth-child(5) {left:80%;}
+
+
+.eq {border: solid #999 10px;}
